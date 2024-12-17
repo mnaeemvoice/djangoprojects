@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Product</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Dua Goats Sahiwal - Upload Product</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/upload/">Upload Product</a></li>
+                <li><a href="#">Pigeon</a></li>
+                <li><a href="#">Parrot</a></li>
+                <li><a href="#">Other Products</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Upload New Product</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>
